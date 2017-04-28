@@ -1,0 +1,13 @@
+general mitchell international airport	mke
+general mitchell international	mke
+baltimore washington airport	bwi
+rental cars	rental car
+car rentals	rental car
+orlando international airport	mco
+orlando international	mco
+love field	dal
+dallas forth worth	dfw
+la guardia airport	lga
+la guardia	lga
+la	los angeles
+supper	dinner

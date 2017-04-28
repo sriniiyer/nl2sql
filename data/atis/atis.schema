@@ -1,0 +1,977 @@
+{
+  "types": {
+    "DISCOUNTED": 40, 
+    "CODE": 21, 
+    "PRESSURIZED": 6, 
+    "STOPAIRPORT": 51, 
+    "FAREID": 31, 
+    "DAYSCODE": 26, 
+    "CITYNAME": 18, 
+    "STATECODE": 13, 
+    "NODISCOUNTS": 61, 
+    "ARRIVALAIRLINE": 52, 
+    "CITYCODE": 16, 
+    "ROUNDTRIPREQUIRED": 37, 
+    "LEGFLIGHT": 49, 
+    "AIRLINEFLIGHT": 46, 
+    "AIRPORTLOCATION": 12, 
+    "DEPARTUREAIRLINE": 53, 
+    "DUALAIRLINE": 28, 
+    "NOTE": 9, 
+    "TIMEZONECODE": 15, 
+    "AIRPORTNAME": 11, 
+    "TIMEZONENAME": 63, 
+    "PROPULSION": 4, 
+    "NIGHT": 41, 
+    "CLASSTYPE": 24, 
+    "DUALCARRIER": 48, 
+    "DIRECTION": 17, 
+    "AIRLINENAME": 8, 
+    "MEALCODE": 47, 
+    "MEALDESCRIPTION": 54, 
+    "COUNTRYNAME": 14, 
+    "MAINAIRLINE": 27, 
+    "TRANSPORTTYPE": 55, 
+    "YEAR": 25, 
+    "CLASSDESCRIPTION": 20, 
+    "FLIGHTDAYS": 45, 
+    "WIDEBODY": 5, 
+    "COMPARTMENT": 23, 
+    "APPLICATION": 60, 
+    "FAREBASISCODE": 34, 
+    "SATURDAYSTAYREQUIRED": 59, 
+    "TOAIRPORT": 33, 
+    "PREMIUM": 38, 
+    "AIRLINECODE": 7, 
+    "STOPOVERS": 58, 
+    "AIRPORTCODE": 10, 
+    "AIRCRAFTCODESEQUENCE": 30, 
+    "FLIGHTID": 44, 
+    "FAREAIRLINE": 35, 
+    "ECONOMY": 39, 
+    "MANUFACTURER": 2, 
+    "RESTRICTIONCODE": 36, 
+    "AIRCRAFTDESCRIPTION": 1, 
+    "FLIGHTNUMBER": 57, 
+    "STATENAME": 62, 
+    "DESCRIPTION": 22, 
+    "BOOKINGCLASS": 19, 
+    "STOPDAYS": 50, 
+    "BASISDAYS": 43, 
+    "PERIOD": 56, 
+    "SEASON": 42, 
+    "AIRCRAFTCODE": 0, 
+    "SERVICENAME": 29, 
+    "BASICTYPE": 3, 
+    "FROMAIRPORT": 32
+  }, 
+  "ents": {
+    "restriction": {
+      "no_discounts": {
+        "index": true, 
+        "type": "NODISCOUNTS", 
+        "utt": "no discounts"
+      }, 
+      "minimum_stay": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "minimum stay"
+      }, 
+      "stopovers": {
+        "index": false, 
+        "type": "STOPOVERS", 
+        "utt": "stopovers"
+      }, 
+      "restriction_code": {
+        "index": true, 
+        "type": "RESTRICTIONCODE", 
+        "utt": "restriction code"
+      }, 
+      "application": {
+        "index": true, 
+        "type": "APPLICATION", 
+        "utt": "application"
+      }, 
+      "maximum_stay": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "maximum stay"
+      }, 
+      "saturday_stay_required": {
+        "index": false, 
+        "type": "SATURDAYSTAYREQUIRED", 
+        "utt": "saturday stay required"
+      }, 
+      "advance_purchase": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "advance purchase"
+      }
+    }, 
+    "flight_stop": {
+      "departure_airline": {
+        "index": false, 
+        "type": "DEPARTUREAIRLINE", 
+        "utt": "departure airline"
+      }, 
+      "stop_number": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "stop number"
+      }, 
+      "arrival_flight_number": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "arrival flight number"
+      }, 
+      "flight_id": {
+        "index": false, 
+        "type": "FLIGHTID", 
+        "utt": "flight id"
+      }, 
+      "arrival_time": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "arrival time"
+      }, 
+      "departure_flight_number": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "departure flight number"
+      }, 
+      "stop_time": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "stop time"
+      }, 
+      "arrival_airline": {
+        "index": false, 
+        "type": "ARRIVALAIRLINE", 
+        "utt": "arrival airline"
+      }, 
+      "stop_days": {
+        "index": false, 
+        "type": "STOPDAYS", 
+        "utt": "stop days"
+      }, 
+      "stop_airport": {
+        "index": false, 
+        "type": "STOPAIRPORT", 
+        "utt": "stop airport"
+      }, 
+      "departure_time": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "departure time"
+      }
+    }, 
+    "food_service": {
+      "meal_code": {
+        "index": true, 
+        "type": "MEALCODE", 
+        "utt": "meal code"
+      }, 
+      "compartment": {
+        "index": true, 
+        "type": "COMPARTMENT", 
+        "utt": "compartment"
+      }, 
+      "meal_number": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "meal number"
+      }, 
+      "meal_description": {
+        "index": true, 
+        "type": "MEALDESCRIPTION", 
+        "utt": "meal description"
+      }
+    }, 
+    "month": {
+      "month_number": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "month number"
+      }, 
+      "month_name": {
+        "index": false, 
+        "type": "MONTHNAME", 
+        "utt": "month name"
+      }
+    }, 
+    "code_description": {
+      "code": {
+        "index": true, 
+        "type": "CODE", 
+        "utt": "code"
+      }, 
+      "description": {
+        "index": false, 
+        "type": "DESCRIPTION", 
+        "utt": "description"
+      }
+    }, 
+    "city": {
+      "city_name": {
+        "index": true, 
+        "type": "CITYNAME", 
+        "utt": "city name"
+      }, 
+      "country_name": {
+        "index": true, 
+        "type": "COUNTRYNAME", 
+        "utt": "country name"
+      }, 
+      "state_code": {
+        "index": true, 
+        "type": "STATECODE", 
+        "utt": "state code"
+      }, 
+      "time_zone_code": {
+        "index": true, 
+        "type": "TIMEZONECODE", 
+        "utt": "time zone code"
+      }, 
+      "city_code": {
+        "index": true, 
+        "type": "CITYCODE", 
+        "utt": "city code"
+      }
+    }, 
+    "flight_fare": {
+      "flight_id": {
+        "index": false, 
+        "type": "FLIGHTID", 
+        "utt": "flight id"
+      }, 
+      "fare_id": {
+        "index": false, 
+        "type": "FAREID", 
+        "utt": "fare id"
+      }
+    }, 
+    "state": {
+      "country_name": {
+        "index": true, 
+        "type": "COUNTRYNAME", 
+        "utt": "country name"
+      }, 
+      "state_code": {
+        "index": true, 
+        "type": "STATECODE", 
+        "utt": "state code"
+      }, 
+      "state_name": {
+        "index": true, 
+        "type": "STATENAME", 
+        "utt": "state name"
+      }
+    }, 
+    "fare_basis": {
+      "discounted": {
+        "index": false, 
+        "type": "DISCOUNTED", 
+        "utt": "discounted"
+      }, 
+      "class_type": {
+        "index": true, 
+        "type": "CLASSTYPE", 
+        "utt": "class type"
+      }, 
+      "season": {
+        "index": true, 
+        "type": "SEASON", 
+        "utt": "season"
+      }, 
+      "basis_days": {
+        "index": false, 
+        "type": "BASISDAYS", 
+        "utt": "basis days"
+      }, 
+      "booking_class": {
+        "index": true, 
+        "type": "BOOKINGCLASS", 
+        "utt": "booking class"
+      }, 
+      "night": {
+        "index": false, 
+        "type": "NIGHT", 
+        "utt": "night"
+      }, 
+      "premium": {
+        "index": false, 
+        "type": "PREMIUM", 
+        "utt": "premium"
+      }, 
+      "fare_basis_code": {
+        "index": true, 
+        "type": "FAREBASISCODE", 
+        "utt": "fare basis code"
+      }, 
+      "economy": {
+        "index": false, 
+        "type": "ECONOMY", 
+        "utt": "economy"
+      }
+    }, 
+    "date_day": {
+      "day_number": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "day number"
+      }, 
+      "month_number": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "month number"
+      }, 
+      "day_name": {
+        "index": false, 
+        "type": "DAYNAME", 
+        "utt": "day name"
+      }, 
+      "year": {
+        "index": false, 
+        "type": "YEAR", 
+        "utt": "year"
+      }
+    }, 
+    "time_interval": {
+      "period": {
+        "index": false, 
+        "type": "PERIOD", 
+        "utt": "period"
+      }, 
+      "end_time": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "end time"
+      }, 
+      "begin_time": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "begin time"
+      }
+    }, 
+    "flight": {
+      "to_airport": {
+        "index": false, 
+        "type": "TOAIRPORT", 
+        "utt": "to airport"
+      }, 
+      "aircraft_code_sequence": {
+        "index": false, 
+        "type": "AIRCRAFTCODESEQUENCE", 
+        "utt": "aircraft code sequence"
+      }, 
+      "dual_carrier": {
+        "index": false, 
+        "type": "DUALCARRIER", 
+        "utt": "dual carrier"
+      }, 
+      "flight_id": {
+        "index": false, 
+        "type": "FLIGHTID", 
+        "utt": "flight id"
+      }, 
+      "stops": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "stops"
+      }, 
+      "flight_days": {
+        "index": false, 
+        "type": "FLIGHTDAYS", 
+        "utt": "flight days"
+      }, 
+      "connections": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "connections"
+      }, 
+      "arrival_time": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "arrival time"
+      }, 
+      "time_elapsed": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "time elapsed"
+      }, 
+      "flight_number": {
+        "index": false, 
+        "type": "FLIGHTNUMBER", 
+        "utt": "flight number"
+      }, 
+      "from_airport": {
+        "index": false, 
+        "type": "FROMAIRPORT", 
+        "utt": "from airport"
+      }, 
+      "airline_flight": {
+        "index": true, 
+        "type": "AIRLINEFLIGHT", 
+        "utt": "airline flight"
+      }, 
+      "airline_code": {
+        "index": false, 
+        "type": "AIRLINECODE", 
+        "utt": "airline code"
+      }, 
+      "meal_code": {
+        "index": false, 
+        "type": "MEALCODE", 
+        "utt": "meal code"
+      }, 
+      "departure_time": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "departure time"
+      }
+    }, 
+    "dual_carrier": {
+      "low_flight_number": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "low flight number"
+      }, 
+      "high_flight_number": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "high flight number"
+      }, 
+      "main_airline": {
+        "index": false, 
+        "type": "MAINAIRLINE", 
+        "utt": "main airline"
+      }, 
+      "service_name": {
+        "index": false, 
+        "type": "SERVICENAME", 
+        "utt": "service name"
+      }, 
+      "dual_airline": {
+        "index": false, 
+        "type": "DUALAIRLINE", 
+        "utt": "dual airline"
+      }
+    }, 
+    "aircraft": {
+      "aircraft_code": {
+        "index": true, 
+        "type": "AIRCRAFTCODE", 
+        "utt": "aircraft code"
+      }, 
+      "capacity": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "capacity"
+      }, 
+      "wing_span": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "wing span"
+      }, 
+      "engines": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "engines"
+      }, 
+      "aircraft_description": {
+        "index": true, 
+        "type": "AIRCRAFTDESCRIPTION", 
+        "utt": "aircraft description"
+      }, 
+      "basic_type": {
+        "index": true, 
+        "type": "BASICTYPE", 
+        "utt": "basic type"
+      }, 
+      "weight": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "weight"
+      }, 
+      "pressurized": {
+        "index": false, 
+        "type": "PRESSURIZED", 
+        "utt": "pressurized"
+      }, 
+      "length": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "length"
+      }, 
+      "propulsion": {
+        "index": true, 
+        "type": "PROPULSION", 
+        "utt": "propulsion"
+      }, 
+      "pay_load": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "pay load"
+      }, 
+      "cruising_speed": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "cruising speed"
+      }, 
+      "range_miles": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "range miles"
+      }, 
+      "wide_body": {
+        "index": false, 
+        "type": "WIDEBODY", 
+        "utt": "wide body"
+      }, 
+      "manufacturer": {
+        "index": true, 
+        "type": "MANUFACTURER", 
+        "utt": "manufacturer"
+      }
+    }, 
+    "fare": {
+      "to_airport": {
+        "index": false, 
+        "type": "TOAIRPORT", 
+        "utt": "to airport"
+      }, 
+      "restriction_code": {
+        "index": true, 
+        "type": "RESTRICTIONCODE", 
+        "utt": "restriction code"
+      }, 
+      "round_trip_required": {
+        "index": false, 
+        "type": "ROUNDTRIPREQUIRED", 
+        "utt": "round trip required"
+      }, 
+      "fare_id": {
+        "index": false, 
+        "type": "FAREID", 
+        "utt": "fare id"
+      }, 
+      "from_airport": {
+        "index": false, 
+        "type": "FROMAIRPORT", 
+        "utt": "from airport"
+      }, 
+      "one_direction_cost": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "one direction cost"
+      }, 
+      "fare_basis_code": {
+        "index": false, 
+        "type": "FAREBASISCODE", 
+        "utt": "fare basis code"
+      }, 
+      "round_trip_cost": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "round trip cost"
+      }, 
+      "fare_airline": {
+        "index": false, 
+        "type": "FAREAIRLINE", 
+        "utt": "fare airline"
+      }
+    }, 
+    "compartment_class": {
+      "compartment": {
+        "index": false, 
+        "type": "COMPARTMENT", 
+        "utt": "compartment"
+      }, 
+      "class_type": {
+        "index": true, 
+        "type": "CLASSTYPE", 
+        "utt": "class type"
+      }
+    }, 
+    "flight_leg": {
+      "flight_id": {
+        "index": false, 
+        "type": "FLIGHTID", 
+        "utt": "flight id"
+      }, 
+      "leg_number": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "leg number"
+      }, 
+      "leg_flight": {
+        "index": false, 
+        "type": "LEGFLIGHT", 
+        "utt": "leg flight"
+      }
+    }, 
+    "days": {
+      "days_code": {
+        "index": false, 
+        "type": "DAYSCODE", 
+        "utt": "days code"
+      }, 
+      "day_name": {
+        "index": false, 
+        "type": "DAYNAME", 
+        "utt": "day name"
+      }
+    }, 
+    "airport_service": {
+      "minutes_distant": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "minutes distant"
+      }, 
+      "airport_code": {
+        "index": false, 
+        "type": "AIRPORTCODE", 
+        "utt": "airport code"
+      }, 
+      "direction": {
+        "index": true, 
+        "type": "DIRECTION", 
+        "utt": "direction"
+      }, 
+      "city_code": {
+        "index": false, 
+        "type": "CITYCODE", 
+        "utt": "city code"
+      }, 
+      "miles_distant": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "miles distant"
+      }
+    }, 
+    "airport": {
+      "airport_code": {
+        "index": true, 
+        "type": "AIRPORTCODE", 
+        "utt": "airport code"
+      }, 
+      "airport_name": {
+        "index": true, 
+        "type": "AIRPORTNAME", 
+        "utt": "airport name"
+      }, 
+      "airport_location": {
+        "index": true, 
+        "type": "AIRPORTLOCATION", 
+        "utt": "airport location"
+      }, 
+      "minimum_connect_time": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "minimum connect time"
+      }, 
+      "country_name": {
+        "index": false, 
+        "type": "COUNTRYNAME", 
+        "utt": "country name"
+      }, 
+      "state_code": {
+        "index": false, 
+        "type": "STATECODE", 
+        "utt": "state code"
+      }, 
+      "time_zone_code": {
+        "index": false, 
+        "type": "TIMEZONECODE", 
+        "utt": "time zone code"
+      }
+    }, 
+    "time_zone": {
+      "time_zone_name": {
+        "index": true, 
+        "type": "TIMEZONENAME", 
+        "utt": "time zone name"
+      }, 
+      "hours_from_gmt": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "hours from gmt"
+      }, 
+      "time_zone_code": {
+        "index": true, 
+        "type": "TIMEZONECODE", 
+        "utt": "time zone code"
+      }
+    }, 
+    "airline": {
+      "note": {
+        "index": true, 
+        "type": "NOTE", 
+        "utt": "note"
+      }, 
+      "airline_code": {
+        "index": true, 
+        "type": "AIRLINECODE", 
+        "utt": "airline code"
+      }, 
+      "airline_name": {
+        "index": true, 
+        "type": "AIRLINENAME", 
+        "utt": "airline name"
+      }
+    }, 
+    "equipment_sequence": {
+      "aircraft_code": {
+        "index": false, 
+        "type": "AIRCRAFTCODE", 
+        "utt": "aircraft code"
+      }, 
+      "aircraft_code_sequence": {
+        "index": true, 
+        "type": "AIRCRAFTCODESEQUENCE", 
+        "utt": "aircraft code sequence"
+      }
+    }, 
+    "ground_service": {
+      "airport_code": {
+        "index": false, 
+        "type": "AIRPORTCODE", 
+        "utt": "airport code"
+      }, 
+      "transport_type": {
+        "index": true, 
+        "type": "TRANSPORTTYPE", 
+        "utt": "transport type"
+      }, 
+      "city_code": {
+        "index": false, 
+        "type": "CITYCODE", 
+        "utt": "city code"
+      }, 
+      "ground_fare": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "ground fare"
+      }
+    }, 
+    "class_of_service": {
+      "booking_class": {
+        "index": true, 
+        "type": "BOOKINGCLASS", 
+        "utt": "booking class"
+      }, 
+      "class_description": {
+        "index": false, 
+        "type": "CLASSDESCRIPTION", 
+        "utt": "class description"
+      }, 
+      "rank": {
+        "index": false, 
+        "type": "INTEGER", 
+        "utt": "rank"
+      }
+    }
+  }, 
+  "defaults": {
+    "restriction": {
+      "col": "restriction_code", 
+      "utt": "restriction"
+    }, 
+    "flight_stop": {
+      "col": "stop_airport", 
+      "utt": "stop"
+    }, 
+    "food_service": {
+      "col": "meal_description", 
+      "utt": "meal"
+    }, 
+    "time_zone": {
+      "col": "time_zone_name", 
+      "utt": "time zone"
+    }, 
+    "code_description": {
+      "col": "description", 
+      "utt": "code"
+    }, 
+    "city": {
+      "col": "city_name", 
+      "utt": "city"
+    }, 
+    "flight_fare": {
+      "col": "fare_id", 
+      "utt": "fare"
+    }, 
+    "state": {
+      "col": "state_name", 
+      "utt": "state"
+    }, 
+    "fare_basis": {
+      "col": "fare_basis_code", 
+      "utt": "fare basis"
+    }, 
+    "date_day": {
+      "col": "day_number", 
+      "utt": "date"
+    }, 
+    "time_interval": {
+      "col": "period", 
+      "utt": "time"
+    }, 
+    "flight": {
+      "col": "flight_id", 
+      "utt": "flight"
+    }, 
+    "dual_carrier": {
+      "col": "dual_airline", 
+      "utt": "dual carrier"
+    }, 
+    "aircraft": {
+      "col": "aircraft_description", 
+      "utt": "aircraft"
+    }, 
+    "fare": {
+      "col": "round_trip_cost", 
+      "utt": "cost"
+    }, 
+    "month": {
+      "col": "month_name", 
+      "utt": "month"
+    }, 
+    "compartment_class": {
+      "col": "class_type", 
+      "utt": "class"
+    }, 
+    "flight_leg": {
+      "col": "leg_flight", 
+      "utt": "leg"
+    }, 
+    "days": {
+      "col": "day_name", 
+      "utt": "day"
+    }, 
+    "airport_service": {
+      "col": "airport_code", 
+      "utt": "airport service"
+    }, 
+    "airport": {
+      "col": "airport_name", 
+      "utt": "airport"
+    }, 
+    "airline": {
+      "col": "airline_name", 
+      "utt": "airline"
+    }, 
+    "equipment_sequence": {
+      "col": "aircraft_code_sequence", 
+      "utt": "equipment sequence"
+    }, 
+    "ground_service": {
+      "col": "transport_type", 
+      "utt": "transportation"
+    }, 
+    "class_of_service": {
+      "col": "booking_class", 
+      "utt": "booking class"
+    }
+  }, 
+  "links": {
+    "month": {
+    },
+    "code_description": {
+    },
+    "date_day": {
+    },
+    "time_interval": {
+    },
+    "days": {
+    },
+    "class_of_service": {
+    },
+    "fare": {
+      "fare_basis": "fare_basis_code", 
+      "airline": "fare_airline", 
+      "flight_fare": "fare_id", 
+      "restriction": "restriction_code"
+    }, 
+    "restriction": {
+      "fare": "restriction_code"
+    }, 
+    "flight": {
+      "flight_stop": "flight_id", 
+      "food_service": "meal_code", 
+      "flight_fare": "flight_id", 
+      "airport": "from_airport", 
+      "airline": "airline_code", 
+      "flight_leg": "flight_id"
+    }, 
+    "dual_carrier": {
+      "airline": "main_airline"
+    }, 
+    "aircraft": {
+      "equipment_sequence": "aircraft_code"
+    }, 
+    "airport": {
+      "flight": "airport_code", 
+      "flight_stop": "airport_code", 
+      "time_zone": "time_zone_code", 
+      "airport_service": "airport_code", 
+      "state": "state_code", 
+      "ground_service": "airport_code"
+    }, 
+    "flight_stop": {
+      "airport": "stop_airport", 
+      "flight": "flight_id", 
+      "airline": "arrival_airline"
+    }, 
+    "food_service": {
+      "flight": "meal_code", 
+      "compartment_class": "compartment"
+    }, 
+    "time_zone": {
+      "city": "time_zone_code", 
+      "airport": "time_zone_code"
+    }, 
+    "flight_fare": {
+      "fare": "fare_id", 
+      "flight": "flight_id"
+    }, 
+    "state": {
+      "city": "state_code", 
+      "airport": "state_code"
+    }, 
+    "city": {
+      "state": "state_code", 
+      "ground_service": "city_code", 
+      "time_zone": "time_zone_code", 
+      "airport_service": "city_code"
+    }, 
+    "airport_service": {
+      "city": "city_code", 
+      "airport": "airport_code"
+    }, 
+    "fare_basis": {
+      "fare": "fare_basis_code", 
+      "compartment_class": "class_type"
+    }, 
+    "equipment_sequence": {
+      "aircraft": "aircraft_code"
+    }, 
+    "ground_service": {
+      "city": "city_code", 
+      "airport": "airport_code"
+    }, 
+    "compartment_class": {
+      "fare_basis": "class_type", 
+      "food_service": "compartment"
+    }, 
+    "flight_leg": {
+      "flight": "flight_id"
+    }, 
+    "airline": {
+      "fare": "airline_code", 
+      "flight_stop": "airline_code", 
+      "flight": "airline_code", 
+      "dual_carrier": "airline_code"
+    }
+  }
+}
