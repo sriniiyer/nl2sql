@@ -1,0 +1,104 @@
+{
+	"types" : {
+    "YEAR" : 0, 
+    "INTEGER" : 1, 
+    "VENUE" : 2, 
+    "AUTHOR" : 3, 
+    "DATASET" : 4, 
+    "JOURNAL" : 5, 
+    "KEYPHRASE" :6, 
+    "FIELD" :7, 
+    "TITLE" :8 
+    },
+  "defaults" : {
+  	"author" : { "col": "authorId", "pres" : "authorName", "utt" : "author"},
+  	"dataset" : { "col": "datasetId", "pres" : "datasetName",  "utt" : "dataset"},
+  	"journal" : { "col" : "journalId", "pres" : "journalName", "utt" : "journal"},
+  	"field" : {"col": "fieldId", "pres": "fieldName", "utt": "area"},
+  	"paper" : {"col": "paperId", "pres":"title",  "utt" : "paper" },
+  	"venue" : {"col": "venueId", "pres" : "venueName",  "utt" : "conference"},
+  	"keyphrase" : {"col" : "keyphraseId", "pres" : "keyphraseName",  "utt" : "keyword"}
+  },
+	"ents" : {
+    "author" : {
+        "authorId" : { "index" : false, "type": "INTEGER"},
+        "authorName" : { "index" : true, "type" : "AUTHOR", "utt":"author"}
+        },
+    "dataset" : {
+        "datasetId" : { "index" : false, "type": "INTEGER"},
+        "datasetName" : { "index" : true, "type" : "DATASET", "utt":"dataset"}
+        },
+    "journal" : {
+        "journalId" : { "index" : false, "type": "INTEGER"},
+        "journalName" : { "index" : true, "type" : "JOURNAL", "utt":"journal"}
+        },
+    "field" : {
+      "fieldId" : { "index" : false, "type": "INTEGER"},
+      "fieldName" : { "index" : true, "type" : "FIELD", "utt": "field"}
+    },
+    "paper" : {
+      "paperId" : { "index" : false, "type": "INTEGER"},
+      "title" : { "index" : true, "type" : "TITLE", "utt":"paper"},
+      "year" : { "index" : true, "type" : "YEAR", "utt":"year"},
+      "numCiting" : { "index" : false, "type": "INTEGER"},
+      "numCitedBy" : { "index" : false, "type": "INTEGER"},
+      "journalId" : { "index" : false, "type": "INTEGER"},
+      "venueId" : { "index" : false, "type": "INTEGER"}
+    },
+    "venue" : {
+        "venueId" : { "index" : false, "type": "INTEGER"},
+        "venueName" : { "index" : true, "type" : "VENUE", "utt":"venue"}
+        },
+    "keyphrase" : {
+    	"keyphraseId" : { "index" : false, "type": "INTEGER"},
+    	"keyphraseName" : { "index" : true, "type" : "KEYPHRASE", "utt" : "keyword"}
+		   }    
+},
+	"links" : {
+    "author" : {
+        "writes" : "authorId"},
+    "dataset" : {
+        "paperDataset" : "datasetId"
+    },
+    "writes" : {
+      "author" : "authorId",
+      "paper" : "paperId"
+    },
+    "paperDataset" : {
+      "paper" : "paperId",
+      "dataset" : "datasetId"
+    },
+    "paper" : {
+      "paperDataset" : "paperId",
+      "writes" : "paperId",
+      "cite" : "paperId",
+      "paperKeyphrase" : "paperId",
+      "paperField" : "paperId",
+      "journal" : "journalId",
+      "venue" : "venueId"
+    },
+    "venue" : {
+      "paper" : "venueId"
+    },
+    "journal" : {
+      "paper" : "journalId"
+    },
+    "cite" : {
+      "paper" : "citingPaperId"
+    },
+    "paperKeyphrase" : {
+      "paper" : "paperId",
+      "keyphrase" : "keyphraseId"
+    },
+    "keyphrase" : {
+        "paperKeyphrase" : "keyphraseId"
+    },
+    "paperField" : {
+      "paper" : "paperId",
+      "field" : "fieldId"
+    },
+    "field" : {
+        "paperField" : "fieldId"
+    }
+}
+}
