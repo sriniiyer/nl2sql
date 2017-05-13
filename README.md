@@ -109,3 +109,12 @@ python geo_interactive_batch.py --ppscale 3 --init_grammar_file ../data/grammar_
 
 python atis_interactive_batch.py --ppscale 3 --init_grammar_file ../data/grammar_empty_atis.sql --data_dir ../data/atis/tmp_no_tem --models_dir ../data/atis/tmp_no_tem/models --host my.db.host --user me --passwd my.secret.password
 ```
+
+# Useful SQL commands
+```
+Make MySQL ignore spaces after function names
+SET sql_mode='IGNORE_SPACE';
+
+Check number of threads connection to the database server
+SHOW STATUS WHERE `variable_name` = 'Threads_connected';
+```
