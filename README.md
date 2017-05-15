@@ -36,7 +36,6 @@ gunzip ppdb-l-combined.gz
 ```
 mysql -u root -ptmppassword geo < data/geo/geo_mysql_dump.db
 mysql -u root -ptmppassword atis < data/atis/atis_mysql_dump.db
-mysql -u root -ptmppassword scholar < data/scholar/s2_mysql_dump.db (will be released soon)
 ```
 
 ### Export DB environment variables
@@ -84,9 +83,17 @@ loading run_atis/s2s-model_epoch60.00_1.13.t7...
 Correct=355 , Total=448.0 , Percent=79.2410714286
 ```
 
-## SCHOLAR (Will be released soon)
+## SCHOLAR
 
-#### Train SCHOLAR (Dataset will be released soon)
+#### Download the dataset from:
+https://drive.google.com/file/d/0Bw5kFkY8RRXYRXdYYlhfdXRlTVk/view?usp=sharing
+
+#### Load it
+```
+mysql -u root -ptmppassword scholar < data/scholar/s2_mysql_dump.db
+```
+
+#### Train SCHOLAR
 ```
 cd src
 ./train_scholar.sh
