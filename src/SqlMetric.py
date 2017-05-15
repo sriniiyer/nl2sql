@@ -4,7 +4,7 @@ import sys
 import itertools
 from sets import Set
 import multiprocessing
-from s2s.data.Timeout import TimeoutError
+from Timeout import TimeoutError
 import re
 import _mysql_exceptions
 import time
@@ -12,8 +12,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 def runQuery(q, timeout, dbconn):
   q = q.replace(' (','(').replace('< =', '<=').replace('> =', '>=').replace('< >', '<>').replace('! =', '!=')
-  q = re.sub('^SELECT ','SELECT /*+ MAX_EXECUTION_TIME(' + str(timeout) + ') */ ', q)
-  q = re.sub('^select ','SELECT /*+ MAX_EXECUTION_TIME(' + str(timeout)+ ') */ ', q)
+  q = re.sub('SELECT ','SELECT /*+ MAX_EXECUTION_TIME(' + str(timeout) + ') */ ', q, 1)
+  q = re.sub('select ','SELECT /*+ MAX_EXECUTION_TIME(' + str(timeout)+ ') */ ', q, 1)
   cu = dbconn.cursor()
   cu.execute(q)
   result = {}
@@ -55,7 +55,7 @@ def compute(dbName, num, gold, q1, host, user, passwd):
 
   # Run predicted query
   try:
-    res1 = runQuery(q1, 3000, dbconn)
+    res1 = runQuery(q1, 10000, dbconn)
     res1 = res1['tuples']
   except _mysql_exceptions.ProgrammingError:
     res1 = []
@@ -68,12 +68,15 @@ def compute(dbName, num, gold, q1, host, user, passwd):
 
   # Run gold query
   try:
-    res2 = runQuery(gold, 3000, dbconn)
+    res2 = runQuery(gold, 10000, dbconn)
     res2 = res2['tuples']
   except _mysql_exceptions.ProgrammingError:
     import pdb
     pdb.set_trace()
     raise ValueError('Gold Query does not run')
+  except _mysql_exceptions.OperationalError:
+    import pdb
+    pdb.set_trace()
   except _mysql_exceptions.InterfaceError:
     res2 = []
     
