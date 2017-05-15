@@ -7,8 +7,7 @@
     "DATASET" : 4, 
     "JOURNAL" : 5, 
     "KEYPHRASE" :6, 
-    "FIELD" :7, 
-    "TITLE" :8 
+    "TITLE" :7 
     },
   "defaults" : {
   	"author" : { "col": "authorId", "pres" : "authorName", "utt" : "author"},
@@ -32,10 +31,6 @@
         "journalId" : { "index" : false, "type": "INTEGER"},
         "journalName" : { "index" : true, "type" : "JOURNAL", "utt":"journal"}
         },
-    "field" : {
-      "fieldId" : { "index" : false, "type": "INTEGER"},
-      "fieldName" : { "index" : true, "type" : "FIELD", "utt": "field"}
-    },
     "paper" : {
       "paperId" : { "index" : false, "type": "INTEGER"},
       "title" : { "index" : true, "type" : "TITLE", "utt":"paper"},
