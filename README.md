@@ -23,6 +23,7 @@ pip install python-gflags MySQL-python futures pattern commentjson numpy h5py
 ```
 download from https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit?usp=sharing
 convert the bin file to tsv: see https://gist.github.com/dav009/10a742de43246210f3ba
+Note: This script outputs a comma separated list. Change that to tabs.
 ```
 
 #### Unzip ppdb file
